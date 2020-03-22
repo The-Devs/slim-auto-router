@@ -1,0 +1,105 @@
+$prim: #007aaa;
+$pContrast: #ffffff;
+$sec: #fff460;
+$sContrast: #000000;
+$pink: #f83def;
+$yellow: #fffc62;
+$green: #2e7e00;
+$blue: #004094;
+
+$asideBg: $prim;
+$asideText: $pContrast;
+
+$theme-colors: (
+    "primary": $prim,
+    "pContrast": $pContrast,
+    "secondary": $sec,
+    "sContrast": $sContrast,
+    "light": #dddddd,
+    "mute": #cccccc,
+    "grey": #aaaaaa,
+    "whatsapp": #25d366,
+    "telegram": #0088cc,
+    "facebook": #3b5998,
+    "youtube": #ff0000,
+    "github": #333,
+    "twitter": #1da1f2,
+    "pink": $pink,
+    "yellow": $yellow,
+    "green": $green,
+    "blue": $blue,
+);
+
+$border-radius: .1rem;
+
+
+// lazy...
+@import "../../vendor/twbs/bootstrap/scss/bootstrap.scss";
+
+.text-inherit {
+    color: inherit !important;
+}
+// reuse SASS Bootstrap variables:
+// $bp-xs: map-get($breakpoints, xs );
+// $bp-sm: map-get($breakpoints, sm );
+
+.mw-xs {
+    max-width: 550px !important;
+}
+.mw-sm {
+    max-width: 760px !important;
+}
+
+.w-xs {
+    width: 320px !important;
+}
+
+.opacity {
+    opacity: 0.8;
+}
+
+.no-decorate {
+    text-decoration: none !important;
+}
+
+.bg-bigdata {
+    position: relative;
+    background-color: #343a40;
+    background: url( /images/big-data.jpg ) no-repeat center center;
+    background-size: cover;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+}
+
+#hero {
+    background-image: url( /images/admin-app/hero.desktop.jpg );
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media ( max-width: 550px ) {
+
+    #hero {
+        background-image: url( /images/admin-app/hero.mobile.jpg );
+        background-position: 60% center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+// 
+aside {
+
+    background-color: $asideBg;
+    color: $asideText;
+
+    nav {
+        li {
+            a {
+                color: $asideText;
+                text-decoration: none !important;
+                
+            }
+        }
+    }
+}

@@ -1,0 +1,202 @@
+/*!
+ * Start Bootstrap - Landing Page v5.0.7 (https://startbootstrap.com/template-overviews/landing-page)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-landing-page/blob/master/LICENSE)
+ */
+
+
+.bg-opensource {
+  background-image: url( "../images/bg-opensource.jpg" );
+  /* background-image: url( "../images/bg-opensource.jpg" ); */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+.bg-whatsapp-section {
+  background-image: url( "../images/bg-whatsapp-section.jpg" );
+  /* background-image: url( "../images/bg-whatsapp-section.jpg" ); */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.bg-grad-gray-blue {
+  background-image: linear-gradient( #F8F9FA, rgb(197, 255, 252), #fff );
+}
+
+.bg-grad-white-10 {
+  background-image: linear-gradient( #fff, rgba( 0, 0, 0, 0 ) 10% );
+}
+.bg-grad-white-20 {
+  background-image: linear-gradient( #fff, rgba( 0, 0, 0, 0 ) 20% );
+}
+.bg-grad-white-30 {
+  background-image: linear-gradient( #fff, rgba( 0, 0, 0, 0 ) 30% );
+}
+.bg-grad-white-40 {
+  background-image: linear-gradient( #fff, rgba( 0, 0, 0, 0 ) 40% );
+}
+.bg-grad-white-50 {
+  background-image: linear-gradient( #fff, rgba( 0, 0, 0, 0 ) 50% );
+}
+.bg-grad-white-60 {
+  background-image: linear-gradient( #fff, rgba( 0, 0, 0, 0 ) 60% );
+}
+.bg-grad-white-70 {
+  background-image: linear-gradient( #fff, rgba( 0, 0, 0, 0 ) 70% );
+}
+.bg-grad-white-80 {
+  background-image: linear-gradient( #fff, rgba( 0, 0, 0, 0 ) 80% );
+}
+.bg-grad-white-90 {
+  background-image: linear-gradient( #fff, rgba( 0, 0, 0, 0 ) 90% );
+}
+.bg-grad-white-100 {
+  background-image: linear-gradient( #fff, rgba( 0, 0, 0, 0 ) );
+}
+
+
+ /**/
+
+body {
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+}
+
+header.masthead {
+  position: relative;
+  background-color: #343a40;
+  background: url("../images/big-data.jpg" ) no-repeat center center;
+  background-size: cover;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+header.masthead .overlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  /* opacity: 0.3; */
+}
+
+header.masthead h1 {
+  font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+  header.masthead {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+  }
+  header.masthead h1 {
+    font-size: 3rem;
+  }
+}
+
+.showcase .showcase-text {
+  padding: 3rem;
+}
+
+/* .showcase .showcase-img {
+  box-shadow: -4 4 4 #000;
+} */
+
+@media (min-width: 768px) {
+  .showcase .showcase-text {
+    padding: 7rem;
+  }
+}
+
+.features-icons {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.features-icons .features-icons-item {
+  max-width: 20rem;
+}
+
+.features-icons .features-icons-item .features-icons-icon {
+  height: 7rem;
+}
+
+.features-icons .features-icons-item .features-icons-icon i {
+  font-size: 4.5rem;
+}
+
+.features-icons .features-icons-item:hover .features-icons-icon i {
+  font-size: 5rem;
+}
+
+.testimonials {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.testimonials .testimonial-item {
+  max-width: 18rem;
+}
+
+.testimonials .testimonial-item img {
+  max-width: 12rem;
+  box-shadow: 0px 5px 5px 0px #adb5bd;
+}
+
+.call-to-action {
+  position: relative;
+  background-color: #343a40;
+  background: url("../img/bg-masthead.jpg") no-repeat center center;
+  background-size: cover;
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.call-to-action .overlay {
+  position: absolute;
+  background-color: #212529;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+}
+
+footer.footer {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.td-hero {
+  margin-top: 2.5em;
+}
+
+.td-hero span {
+  font-size: 1.5em;
+  line-height: 0.8;
+}
+
+@media (min-width: 768px) {
+  .td-hero {
+    margin-top: -0.5em;
+  }
+}
+
+.mw-xs {
+  max-width: 418px !important;
+}
+
+.mh-hero {
+  max-height: 560 !important;
+}
