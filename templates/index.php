@@ -21,76 +21,76 @@
 	<link href="<?php echo STYLES_PATH; ?>landing-page.css" rel="stylesheet">
 
 	<script>
-	let last_known_scroll_position = 0;
-	let ticking = false;
+		let last_known_scroll_position = 0;
+		let ticking = false;
 
-	function handleClasses ( node, className = null ) {
-		node.classList.remove( "bg-grad-white-100" );
-		node.classList.remove( "bg-grad-white-90" );
-		node.classList.remove( "bg-grad-white-80" );
-		node.classList.remove( "bg-grad-white-70" );
-		node.classList.remove( "bg-grad-white-60" );
-		node.classList.remove( "bg-grad-white-50" );
-		node.classList.remove( "bg-grad-white-40" );
-		node.classList.remove( "bg-grad-white-30" );
-		node.classList.remove( "bg-grad-white-20" );
-		node.classList.remove( "bg-grad-white-10" );
-		node.classList.remove( "bg-white" );
-		if ( className ) {
-			node.classList.add( className );
-		}
-	} 
+		function handleClasses ( node, className = null ) {
+			node.classList.remove( "bg-grad-white-100" );
+			node.classList.remove( "bg-grad-white-90" );
+			node.classList.remove( "bg-grad-white-80" );
+			node.classList.remove( "bg-grad-white-70" );
+			node.classList.remove( "bg-grad-white-60" );
+			node.classList.remove( "bg-grad-white-50" );
+			node.classList.remove( "bg-grad-white-40" );
+			node.classList.remove( "bg-grad-white-30" );
+			node.classList.remove( "bg-grad-white-20" );
+			node.classList.remove( "bg-grad-white-10" );
+			node.classList.remove( "bg-white" );
+			if ( className ) {
+				node.classList.add( className );
+			}
+		} 
 
-	function doSomething(scroll_pos) {
-		let nav = document.querySelector( "nav" );
-		if ( scroll_pos < 56 ) {
-			handleClasses( nav );
+		function doSomething(scroll_pos) {
+			let nav = document.querySelector( "nav" );
+			if ( scroll_pos < 56 ) {
+				handleClasses( nav );
+			}
+			else if ( scroll_pos >= 56 && scroll_pos < 112 ) {
+				handleClasses( nav, "bg-grad-white-10" );
+			}
+			else if ( scroll_pos >= 112 && scroll_pos < 168 ) {
+				handleClasses( nav, "bg-grad-white-20" );
+			}
+			else if ( scroll_pos >= 168 && scroll_pos < 224 ) {
+				handleClasses( nav, "bg-grad-white-30" );
+			}
+			else if ( scroll_pos >= 224 && scroll_pos < 280 ) {
+				handleClasses( nav, "bg-grad-white-40" );
+			}
+			else if ( scroll_pos >= 280 && scroll_pos < 336 ) {
+				handleClasses( nav, "bg-grad-white-50" );
+			}
+			else if ( scroll_pos >= 336 && scroll_pos < 392 ) {
+				handleClasses( nav, "bg-grad-white-60" );
+			}
+			else if ( scroll_pos >= 392 && scroll_pos < 448 ) {
+				handleClasses( nav, "bg-grad-white-70" );
+			}
+			else if ( scroll_pos >= 448 && scroll_pos < 504 ) {
+				handleClasses( nav, "bg-grad-white-80" );
+			}
+			else if ( scroll_pos >= 504 && scroll_pos < 504 ) {
+				handleClasses( nav, "bg-grad-white-90" );
+			}
+			else if ( scroll_pos >= 504 && scroll_pos < 560 ) {
+				handleClasses( nav, "bg-grad-white-100" );
+			}
+			else if ( scroll_pos >= 600 ) {
+				handleClasses( nav, "bg-white" );
+			}
 		}
-		else if ( scroll_pos >= 56 && scroll_pos < 112 ) {
-			handleClasses( nav, "bg-grad-white-10" );
-		}
-		else if ( scroll_pos >= 112 && scroll_pos < 168 ) {
-			handleClasses( nav, "bg-grad-white-20" );
-		}
-		else if ( scroll_pos >= 168 && scroll_pos < 224 ) {
-			handleClasses( nav, "bg-grad-white-30" );
-		}
-		else if ( scroll_pos >= 224 && scroll_pos < 280 ) {
-			handleClasses( nav, "bg-grad-white-40" );
-		}
-		else if ( scroll_pos >= 280 && scroll_pos < 336 ) {
-			handleClasses( nav, "bg-grad-white-50" );
-		}
-		else if ( scroll_pos >= 336 && scroll_pos < 392 ) {
-			handleClasses( nav, "bg-grad-white-60" );
-		}
-		else if ( scroll_pos >= 392 && scroll_pos < 448 ) {
-			handleClasses( nav, "bg-grad-white-70" );
-		}
-		else if ( scroll_pos >= 448 && scroll_pos < 504 ) {
-			handleClasses( nav, "bg-grad-white-80" );
-		}
-		else if ( scroll_pos >= 504 && scroll_pos < 504 ) {
-			handleClasses( nav, "bg-grad-white-90" );
-		}
-		else if ( scroll_pos >= 504 && scroll_pos < 560 ) {
-			handleClasses( nav, "bg-grad-white-100" );
-		}
-		else if ( scroll_pos >= 600 ) {
-			handleClasses( nav, "bg-white" );
-		}
-	}
 
-	window.addEventListener('scroll', function(e) {
-	last_known_scroll_position = window.scrollY;
-	if (!ticking) {
-		window.requestAnimationFrame(function() {
-		doSomething(last_known_scroll_position);
-		ticking = false;
+		window.addEventListener('scroll', function(e) {
+		last_known_scroll_position = window.scrollY;
+		if (!ticking) {
+			window.requestAnimationFrame(function() {
+			doSomething(last_known_scroll_position);
+			ticking = false;
+			});
+		}
+		ticking = true;
 		});
-	}
-	ticking = true;
-	});
 	</script>
 </head>
 
@@ -157,7 +157,7 @@
 						Criação de Logo, Site, eCommerce, Sistema Interno, Aplicativo Mobile, Aplicativo Desktop, Aplicativo Web, Web Service, Integração de Sistemas, Banco de Dados, Análise Estatística, Estatística Computacional, Alta Performance, Automação de Processos.
 					</p>
 				</div>
-				<div class="col-12">
+				<!--div class="col-12">
 					<div class="d-flex flex-column flex-sm-row justify-content-center">
 						<div class="my-auto px-sm-1">
 							<a href="https://www.facebook.com/thefulldevs/" class="btn btn-block btn-lg btn-primary" target="_blank">
@@ -180,7 +180,7 @@
 							</a>
 						</div>
 					</div>
-				</div>
+				</div-->
 			</div>
 		</div>
 	</header>
@@ -257,7 +257,7 @@
 					</h2>
 				</div>
 			</div>
-			<div class="row no-gutters bg-grad-gray-blue">
+			<!--div class="row no-gutters bg-grad-gray-blue">
 				<div 
 					class="col-lg-6 order-lg-2 text-white showcase-img" 
 				>
@@ -278,8 +278,8 @@
 						Nada melhor do que ao precisar de uma informação ela estar disponível ali ao clique do mouse... 5 segundos e a informação está toda lá. Você não fica esperando dados carregarem, não perde o foco do que está fazendo por conta da espera e o trabalho flui bem melhor. Eleve a produtividade da sua empresa com um sistema administrativo <a href="admin-app/" >(experimente clicando aqui)</a>.
 					</p>
 				</div>
-			</div>
-			<div class="row no-gutters">
+			</div-->
+			<div class="row no-gutters py-4">
 				<div 
 					class="col-lg-6 order-lg-2 text-white showcase-img" 
 				>
@@ -298,7 +298,7 @@
 					</p>
 				</div>
 			</div>
-			<div class="row no-gutters" style="background-color: #EEEEEE;">
+			<div class="row no-gutters py-4" style="background-color: #EEEEEE;">
 				<div 
 					class="col-lg-6 text-white" 
 				>
@@ -315,8 +315,7 @@
 					<p class="lead mb-0">Certos modelos de negócio se encaixam melhor em um aplicativo mobile do que em um site. É o caso da <a href="https://play.google.com/store/apps/details?id=br.com.lavajatoautofacil" target="_blank" rel="noopener noreferrer">Lava Jato Auto Fácil</a>. A tecnologia principal é o aplicativo para smartphones <small><a href="https://play.google.com/store/apps/details?id=br.com.lavajatoautofacil" target="_blank" rel="noopener noreferrer">(ver app)</a></small> e um site para apresentação do aplicativo e da empresa <small><a href="https://lavajatoautofacil.com.br" target="_blank" rel="noopener noreferrer">(ver site)</a></small></p>
 				</div>
 			</div>
-			
-			<div class="row no-gutters">
+			<div class="row no-gutters py-4">
 				<div 
 					class="col-lg-6 text-white" 
 				>
@@ -430,7 +429,7 @@
 					<p class="text-center mw-xs mx-auto">
 						Se você é um desenvolvedor ou quer iniciar uma carreira na programação, The Devs disponibiliza projetos utilitários para desenvolvimento.
 					</p>
-					<a href="https://github.com/thefulldevs/" class="btn btn-lg btn-outline-info my-3" target="_blank">
+					<a href="https://github.com/The-Devs/" class="btn btn-lg btn-outline-info my-3" target="_blank">
 						<span>
 							<i class="fas fa-github"></i>
 						</span>

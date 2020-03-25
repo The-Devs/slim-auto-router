@@ -136,20 +136,6 @@ function call_sidebar ( string $appPrefix, $logo = "" ) {
                         </span>
                     </a>
                 </li>
-
-                <!-- <li v-for="item in nav" class="mx-3 my-4">
-                    <a
-                        :href="'/<?php echo $appPrefix; ?>/' + item.url"
-                        class="d-block text-center text-pContrast"
-                    >
-                        <figure class="my-0">
-                            <i :class="item.icon + ' fa-lg'"></i>
-                        </figure>
-                        <span style="font-size: 0.8em;">
-                            {{ item.label }}
-                        </span>
-                    </a>
-                </li> -->
             </ul>
         </nav>
     </aside>
@@ -168,16 +154,8 @@ function call_footer() {
                         </li>
                         <li class="list-inline-item">&sdot;</li>
                         <li class="list-inline-item">
-                            <a href="/admin-app/">TD Admin</a>
+                            <a href="/equipe">Equipe</a>
                         </li>
-                        <!-- <li class="list-inline-item">&sdot;</li> -->
-                        <!-- <li class="list-inline-item">
-                            <a href="#">Terms of Use</a>
-                        </li>
-                        <li class="list-inline-item">&sdot;</li>
-                        <li class="list-inline-item">
-                            <a href="#">Privacy Policy</a>
-                        </li> -->
                     </ul>
                     <p class="text-muted small mb-4 mb-lg-0">Desenvolvimento de Software focado na sua experiência.</p>
                 </div>
@@ -194,7 +172,7 @@ function call_footer() {
                             </a>
                         </li>
                         <li class="list-inline-item">
-                            <a href="https://github.com/thefulldevs" target="_blank">
+                            <a href="https://github.com/The-Devs" target="_blank">
                                 <i class="fab fa-github fa-2x fa-fw"></i>
                             </a>
                         </li>
@@ -217,7 +195,8 @@ function call_head( string $appPrefix ) {
         <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
 
 
-        <script src="<?php echo SCRIPTS_PATH . $appPrefix; ?>/fa.js"></script>
+        <!--script src="<?php echo SCRIPTS_PATH . $appPrefix; ?>/fa.js"></script-->
+        <script src="https://kit.fontawesome.com/e1df53984c.js"></script>
         <script src="<?php echo SCRIPTS_PATH . $appPrefix; ?>/axios.min.js"></script>
 
         <style>

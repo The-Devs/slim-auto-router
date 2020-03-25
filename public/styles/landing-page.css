@@ -3,7 +3,9 @@
  * Copyright 2013-2019 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-landing-page/blob/master/LICENSE)
  */
-
+body {
+  overflow-x: hidden;
+}
 
 .bg-opensource {
   background-image: url( "../images/bg-opensource.jpg" );
