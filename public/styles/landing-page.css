@@ -107,6 +107,10 @@ header.masthead h1 {
   }
 }
 
+.showcase article.card {
+  box-shadow: 0 0 16px rgba( 0, 0, 0, 0.5 );
+}
+
 .showcase .showcase-text {
   padding: 3rem;
 }
@@ -149,6 +153,18 @@ header.masthead h1 {
 
 .testimonials .testimonial-item {
   max-width: 18rem;
+  height: 100%;
+  padding: 1em;
+}
+.testimonials .testimonial-item:hover {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #215cbd;
+  border-radius: 2em;
+}
+
+.testimonials .testimonial-item a {
+  text-decoration: none;
 }
 
 .testimonials .testimonial-item img {

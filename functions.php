@@ -186,6 +186,16 @@ function call_footer() {
 
 function call_head( string $appPrefix ) {
     ?>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-72747311-3"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-72747311-3');
+        </script>
+
         <link href="https://fonts.googleapis.com/css?family=Roboto:500&display=swap" rel="stylesheet" />
 
         <link href="<?php echo STYLES_PATH . $appPrefix; ?>/main.css" rel="stylesheet" />
@@ -195,9 +205,7 @@ function call_head( string $appPrefix ) {
         <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
 
 
-        <!--script src="<?php echo SCRIPTS_PATH . $appPrefix; ?>/fa.js"></script-->
         <script src="https://kit.fontawesome.com/e1df53984c.js"></script>
-        <script src="<?php echo SCRIPTS_PATH . $appPrefix; ?>/axios.min.js"></script>
 
         <style>
             h1,

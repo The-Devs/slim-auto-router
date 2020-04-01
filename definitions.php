@@ -48,6 +48,9 @@ define( "SASS_URI", ASSETS_URI . "sass" . DS );
 define( "IMAGES_PATH", PUBLIC_PATH . "images" . DS );
 define( "IMAGES_URI", PUBLIC_URI . "images" . DS );
 
+define( "ICONS_PATH", IMAGES_PATH . "icons" . DS );
+define( "ICONS_URI", IMAGES_URI . "icons" . DS );
+
 define( "USERS_PATH", PUBLIC_PATH . "users" . DS);
 define( "USERS_URI", PUBLIC_URI . "users" . DS);
 

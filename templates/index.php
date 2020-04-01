@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="">
 	<meta name="author" content="">
+	<link rel="shortcut icon" href="<?php echo IMAGES_PATH; ?>logo.png" type="image/png">
 
 	<title>The Devs - Desenvolvimento de Software</title>
 
@@ -109,8 +110,7 @@
 					/>
 				</figure>
 
-				<!-- vue -->
-				<form action="https://thedevs.com.br/mailer" class="my-auto">
+				<form action="/mailer" method="POST" class="my-auto">
 					<label class="my-auto">
 						<small class="text-muted">
 							Serviço
@@ -157,30 +157,30 @@
 						Criação de Logo, Site, eCommerce, Sistema Interno, Aplicativo Mobile, Aplicativo Desktop, Aplicativo Web, Web Service, Integração de Sistemas, Banco de Dados, Análise Estatística, Estatística Computacional, Alta Performance, Automação de Processos.
 					</p>
 				</div>
-				<!--div class="col-12">
+				<div class="col-12">
 					<div class="d-flex flex-column flex-sm-row justify-content-center">
 						<div class="my-auto px-sm-1">
-							<a href="https://www.facebook.com/thefulldevs/" class="btn btn-block btn-lg btn-primary" target="_blank">
+							<a href="#equipe" class="btn btn-block btn-lg btn-outline-info">
 								<span>
-									<i class="fab fa-facebook-messenger"></i>
+									<i class="fas fa-users"></i>
 								</span>
 								<span class="mx-1">
-									Contato por Facebook
+									Quem somos
 								</span>
 							</a>
 						</div>
 						<div class="py-2 px-sm-1 my-auto">
-							<a href="https://wa.me/+5521964470631/?text=Oi.%20Vi%20esse%20contato%20na%20The%20Devs%20-%20Desenvolvimento%20de%20Software.%20https%3A%2F%2Fthedevs.com.br" class="btn btn-block btn-lg btn-success">
+							<a href="/utils/" class="btn btn-block btn-lg btn-success">
 								<span>
-									<i class="fas fa-whatsapp"></i>
+									<i class="fas fa-tools"></i>
 								</span>
 								<span class="mx-1">
-									Contato por WhatsApp
+									Utilitários
 								</span>
 							</a>
 						</div>
 					</div>
-				</div-->
+				</div>
 			</div>
 		</div>
 	</header>
@@ -253,111 +253,115 @@
 			<div class="row bg-light">
 				<div class="col-12">
 					<h2 class="text-center my-4 py-3">
-						Trabalhos em destaque
+						Alguns trabalhos
 					</h2>
 				</div>
 			</div>
-			<!--div class="row no-gutters bg-grad-gray-blue">
-				<div 
-					class="col-lg-6 order-lg-2 text-white showcase-img" 
-				>
-					<a
-						href="admin-app/"
-						class="m-auto"
-					>
+
+			<div class="row py-4">
+				<div class="col-sm-6 col-md-4 p-5">
+					<article class="card h-100">
 						<img
-							src="<?php echo IMAGES_PATH; ?>localsystem.png"
-							alt="Sistema Administrativo"
-							class="mw-100"
-						/>
-					</a>
-				</div>
-				<div class="col-lg-6 order-lg-1 my-auto showcase-text">
-					<h2>Sistema Administrativo</h2>
-					<p class="lead mb-0">
-						Nada melhor do que ao precisar de uma informação ela estar disponível ali ao clique do mouse... 5 segundos e a informação está toda lá. Você não fica esperando dados carregarem, não perde o foco do que está fazendo por conta da espera e o trabalho flui bem melhor. Eleve a produtividade da sua empresa com um sistema administrativo <a href="admin-app/" >(experimente clicando aqui)</a>.
-					</p>
-				</div>
-			</div-->
-			<div class="row no-gutters py-4">
-				<div 
-					class="col-lg-6 order-lg-2 text-white showcase-img" 
-				>
-					<a href="https://luzcamerapet.com.br" target="_blank">
-						<img
+							class="card-img-top"
 							src="<?php echo IMAGES_PATH; ?>luz-camera-pet-ampliado.jpg"
 							alt="Luz, Câmera, Pet!"
-							class="mw-100"
 						/>
-					</a>
+						<div class="card-body">
+							<h5 class="card-title">Site</h5>
+							<p class="card-text">Apresentação de serviços, portfólio e seção de contato.</p>
+							<div class="d-flex">
+								<a href="https://luzcamerapet.com.br" target="_blank" class="btn btn-link m-auto">
+									<span class="mr-1">
+										<i class="fas fa-link"></i>
+									</span>
+									Visitar site
+								</a>
+							</div>
+						</div>
+					</article>
 				</div>
-				<div class="col-lg-6 order-lg-1 my-auto showcase-text">
-					<h2>Design Destacando Imagens</h2>
-					<p class="lead mb-0">
-						Uma imagem fala mais que mil palavras. Melhor forma de capturar os olhos de alguém é com uma imagem bem bonita, chamativa, que represente seu negócio e valorize a qualidade dos seus serviços e produtos. Ideal para apresentar o seu negócio e causar uma boa primeira impressão. Visite o site <a href="https://luzcamerapet.com.br" target="_blank" rel="noopener noreferrer">Luz, Câmera, Pet!</a> para ver um exemplo de site institucional.
-					</p>
-				</div>
-			</div>
-			<div class="row no-gutters py-4" style="background-color: #EEEEEE;">
-				<div 
-					class="col-lg-6 text-white" 
-				>
-					<a href="https://play.google.com/store/apps/details?id=br.com.lavajatoautofacil" target="_blank">
+				<div class="col-sm-6 col-md-4 p-5">
+					<article class="card h-100">
 						<img
+							class="card-img-top"
 							src="<?php echo IMAGES_PATH; ?>lavajato-autofacil.jpg"
 							alt="Lavajato Auto Fácil"
-							class="mw-100 showcase-img"
 						/>
-					</a>
+						<div class="card-body">
+							<h5 class="card-title">Mobile</h5>
+							<p class="card-text">Apicativo para dispositivo mais utilizado no dias de hoje.</p>
+							<div class="d-flex">
+								<a href="https://play.google.com/store/apps/details?id=br.com.lavajatoautofacil" target="_blank" class="btn btn-link m-auto">
+									<span class="mr-1">
+										<i class="fas fa-link"></i>
+									</span>
+									Ver na Play Store
+								</a>
+							</div>
+						</div>
+					</article>
 				</div>
-				<div class="col-lg-6 my-auto showcase-text">
-					<h2>Aplicativo Mobile</h2>
-					<p class="lead mb-0">Certos modelos de negócio se encaixam melhor em um aplicativo mobile do que em um site. É o caso da <a href="https://play.google.com/store/apps/details?id=br.com.lavajatoautofacil" target="_blank" rel="noopener noreferrer">Lava Jato Auto Fácil</a>. A tecnologia principal é o aplicativo para smartphones <small><a href="https://play.google.com/store/apps/details?id=br.com.lavajatoautofacil" target="_blank" rel="noopener noreferrer">(ver app)</a></small> e um site para apresentação do aplicativo e da empresa <small><a href="https://lavajatoautofacil.com.br" target="_blank" rel="noopener noreferrer">(ver site)</a></small></p>
-				</div>
-			</div>
-			<div class="row no-gutters py-4">
-				<div 
-					class="col-lg-6 text-white" 
-				>
-					<a href="https://play.google.com/store/apps/details?id=br.com.lavajatoautofacil" target="_blank">
+				<div class="col-sm-6 col-md-4 p-5">
+					<article class="card h-100">
 						<img
-							src="<?php echo IMAGES_PATH; ?>brigidos.jpg"
-							alt="Brigidos Construção Inovadora"
-							class="mw-100 showcase-img"
+							class="card-img-top"
+							src="<?php echo IMAGES_PATH; ?>artesanatoecologico.jpg"
+							alt="Card image cap"
 						/>
-					</a>
-				</div>
-				<div class="col-lg-6 my-auto showcase-text">
-					<h2>eCommerce</h2>
-					<p class="lead mb-0">eCommerces permitem pagamentos online, por boleto, cartão de crédito ou débito. <a href="https://brigidos.com.br" target="_blank" rel="noopener noreferrer">Brigido's</a> traz esse conceito com um módulo de autorização de pedidos. Antes de um pedido ser efetivado de fato, ele é redirecionado para um setor de vendas que entra em contato por telefone ou whatsapp com o cliente para completar o registro do pedido. Essa estratégia permite uma venda ativa por parte da empresa, um diálogo direto com o cliente apresentando a imagem de uma venda segura em uma empresa comprometida em servir.</p>
+						<div class="card-body">
+							<h5 class="card-title">eCommerce</h5>
+							<p class="card-text">Apresentação de produtos e módulos de pagamentos online.</p>
+							<div class="d-flex">
+								<a href="https://artesanatoecologico.com.br" target="_blank" class="btn btn-link m-auto">
+									<span class="mr-1">
+										<i class="fas fa-link"></i>
+									</span>
+									Visitar loja virtual
+								</a>
+							</div>
+						</div>
+					</article>
 				</div>
 			</div>
+			
 			<div class="row no-gutters bg-whatsapp-section text-white py-5">
 				<div 
 					class="col-12 py-5 text-center"
 				>
 					<h2>
-						Vamos falar de negócios?
+						Ferramentas de utilidades
 					</h2>
 					<p class="my-5 mx-auto mw-xs p-2">
-						Tire suas dúvidas, faça uma consulta sem compromisso. Preencha o formulário na barra de topo ou entre em contato via whatsapp.
+						A The Devs oferece gratuitamente utilitários para uso público. Cada utilitário possui sua descrição e uma breve explicação de como utilizar, o que motiva seu uso, onde aplicar e como pode ser útil no dia a dia. Sinta-se livre para utilizá-las para benefíciar seu negócio, sua comunidade ou a si mesmo. Se beneficiando da utilidade, considere uma doação voluntária para nos ajudar a manter o desenvolvimento e manutenção dos sistemas.
 					</p>
-					<div>
-						<a
-							href="https://wa.me/+5521964470631/?text=Oi.%20Vi%20esse%20contato%20na%20The%20Devs%20-%20Desenvolvimento%20de%20Software.%20https%3A%2F%2Fthedevs.com.br"
-							target="_blank"
-							class="btn btn-lg btn-success"
-						>
-							<span>
-								<i class="fab fa-whatsapp"></i>
-							</span>
-							<span class="mx-1">
-								Entre em contato agora!
-							</span>
-						</a>
-						<p>
-							<small>21 9 6447 0631</small>
-						</p>
+					<div class="d-flex flex-column flex-sm-row justify-content-center">
+						<div class="p-2">
+							<a
+								href=""
+								target="_blank"
+								class="btn btn-lg btn-outline-warning"
+							>
+								<span>
+									<i class="fas fa-hand-holding-heart"></i>
+								</span>
+								<span class="mx-1">
+									Doação voluntária
+								</span>
+							</a>
+						</div>
+						<div class="p-2">
+							<a
+								href="/utils/"
+								class="btn btn-lg btn-success"
+							>
+								<span>
+									<i class="fas fa-tools"></i>
+								</span>
+								<span class="mx-1">
+									Listar utilitários
+								</span>
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -367,50 +371,62 @@
 	<!-- Testimonials -->
 	<section id="equipe" class="testimonials text-center bg-light">
 		<div class="container">
-			<h2 class="mb-5">Conheça a Equipe</h2>
+			<h2 class="mb-5">Quem Somos</h2>
+			<p class="text-muted">
+				Devs é um termo utilizado na comunidade de programadores que significa Desenvolvedores(as), vindo do inglês Developers. A The Devs é uma organização de trabalhadores autônomos da área de desenvolvimento de software, identidade visual, design gráfico e publicidade. Desenvolvemos projetos sob demanda e os ganhos são dividos entre os participantes que atuaram no projeto. Desenvolvemos sistemas web e mobile, jogos, servidores, logotipo, sites e lojas virtuais, entre outros tipos de projetos voltados para nossos <a href="/utils/">utilitários públicos</a>. Para desenvolvedores ou para aquelas pessoas que desejam iniciar uma carreira no desenvolvimento web disponibilizamos projetos opensource, basta acessar nossos <a href="https://github.com/The-Devs/" target="_blank">repositórios no GitHub</a>.
+			</p>
+			<!--div class="">
+				<a href="" class="btn btn-link">
+					Conheça as pessoas
+				</a>
+			</div-->
 			<div class="row">
-				<div class="col-md-6 p-2">
-					<div class="testimonial-item mx-auto my-5 mb-lg-0">
-						<img class="img-fluid rounded-circle mb-3" src="<?php echo IMAGES_PATH; ?>enriquerene.jpg" alt="Enrique René">
-						<h5>
-							Enrique René
-							<br />
-							<small class="text-muted">Desenvolvedor Full Stack</small>
-						</h5>
-						<p class="font-weight-light my-3">Bacharel em Física capaz de modelar matematicamente regras de negócio. Confortável em lidar com tratamentos estatísticos e análises gráficas. Desenvolvimento para Desktop, Web e Mobile.</p>
+				<div class="col-sm-6 col-md-4 px-4 py-3">
+					<div class="testimonial-item mx-auto my-2 mb-lg-0">
+						<a href="/equipe/enriquerene" class="d-block">
+							<img class="img-fluid rounded-circle mb-3" src="<?php echo IMAGES_PATH; ?>enriquerene.jpg" alt="Enrique René" width="100">
+							<h5>
+								Enrique René
+								<br />
+								<small class="text-muted">Desenvolvedor Web</small>
+							</h5>
+						</a>
 					</div>
 				</div>
-				<div class="col-md-6 p-2">
-					<div class="testimonial-item mx-auto my-5 mb-lg-0">
-						<img class="img-fluid rounded-circle mb-3" src="<?php echo IMAGES_PATH; ?>yagogomes.jpg" alt="Yago Gomes">
-						<h5>
-							Yago Gomes
-							<br />
-							<small class="text-muted">Game Developer</small>
-						</h5>
-						<p class="font-weight-light my-3">Experiente em análise de jogos, seu interesse principal é o desenvolvimento de jogos estilo MMORPG. Facilidade em enxergar padrões e capaz de programá-los de forma ágil. Configuração de servidores para jogos.</p>
+				<div class="col-sm-6 col-md-4 px-4 py-2">
+					<div class="testimonial-item mx-auto my-2 mb-lg-0">
+						<a href="/equipe/yagomes" class="d-block">
+							<img class="img-fluid rounded-circle mb-3" src="<?php echo IMAGES_PATH; ?>yagomes.jpg" alt="Yago Gomes" width="100">
+							<h5>
+								Yago Gomes
+								<br />
+								<small class="text-muted">Desenvolvedor de Jogos</small>
+							</h5>
+						</a>
 					</div>
 				</div>
-				<div class="col-md-6 p-2">
-					<div class="testimonial-item mx-auto my-5 mb-lg-0">
-						<img class="img-fluid rounded-circle mb-3" src="<?php echo IMAGES_PATH; ?>gabrielcarocha.jpg" alt="Gabriel Carocha">
-						<h5>
-							Gabriel Carocha
-							<br />
-							<small class="text-muted">Desenvolvedor Frontend</small>
-						</h5>
-						<p class="font-weight-light my-3">Foco no visual, trabalha principalmente no desenvolvimento UI e UX apoiado sobre sua criatividade e ampla visão de negócio. Capaz de traduzir aspectos comerciais em componentes atrativos na tela. Seu interesse principal é o desenvolvimento Frontend.</p>
+				<div class="col-sm-6 col-md-4 px-4 py-2">
+					<div class="testimonial-item mx-auto my-2 mb-lg-0">
+						<a href="/equipe/gabeauxis" class="d-block">
+							<img class="img-fluid rounded-circle mb-3" src="<?php echo IMAGES_PATH; ?>gabeauxis.jpg" alt="Gabriel Beauxis" width="100">
+							<h5>
+								Gabriel Beauxis
+								<br />
+								<small class="text-muted">Designer Gráfico e Mídia Social</small>
+							</h5>
+						</a>
 					</div>
 				</div>
-				<div class="col-md-6 p-2">
-					<div class="testimonial-item mx-auto my-5 mb-lg-0">
-						<img class="img-fluid rounded-circle mb-3" src="<?php echo IMAGES_PATH; ?>gabrielbeauxis.jpg" alt="Gabriel Beauxis">
-						<h5>
-							Gabriel Beauxis
-							<br />
-							<small class="text-muted">Designer Gráfico e Mídia Social</small>
-						</h5>
-						<p class="font-weight-light my-3">Criatividade e olhar aguçado aos detalhes o fazem capaz de criar belas artes e vídeos para apresentação e divulgação de projetos. Seu entendimento das redes sociais permitem um forte impulsionamento para a visibilidade do negócio.</p>
+				<div class="col-sm-6 col-md-4 px-4 py-2">
+					<div class="testimonial-item mx-auto my-2 mb-lg-0">
+						<a href="/equipe/gcarocha" class="d-block">
+							<img class="img-fluid rounded-circle mb-3" src="<?php echo IMAGES_PATH; ?>gcarocha.jpg" alt="Gabriel Carocha" width="100">
+							<h5>
+								Gabriel Carocha
+								<br />
+								<small class="text-muted">Desenvolvedor Frontend</small>
+							</h5>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -427,11 +443,11 @@
 				</div>
 				<div class="col-12 mx-auto">
 					<p class="text-center mw-xs mx-auto">
-						Se você é um desenvolvedor ou quer iniciar uma carreira na programação, The Devs disponibiliza projetos utilitários para desenvolvimento.
+						Se você é desenvolvedor(a) ou quer iniciar uma carreira na programação, The Devs disponibiliza projetos utilitários opensource para desenvolvimento.
 					</p>
 					<a href="https://github.com/The-Devs/" class="btn btn-lg btn-outline-info my-3" target="_blank">
 						<span>
-							<i class="fas fa-github"></i>
+							<i class="fab fa-github"></i>
 						</span>
 						<span class="mx-1">
 							Visitar repositórios
