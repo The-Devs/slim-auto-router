@@ -184,6 +184,20 @@ function call_footer() {
     <?php
 }
 
+function call_analytics() {
+?>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-72747311-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-72747311-3');
+    </script>
+<?php
+}
+
 function call_head( string $appPrefix ) {
     ?>
         <!-- Global site tag (gtag.js) - Google Analytics -->
