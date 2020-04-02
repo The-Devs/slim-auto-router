@@ -3,20 +3,12 @@
 
 <head>
 	<?php call_analytics(); ?>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<?php call_default(); ?>
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<link rel="shortcut icon" href="<?php echo IMAGES_PATH; ?>logo.png" type="image/png">
 
 	<title>The Devs - Desenvolvimento de Software</title>
-
-	<!-- Bootstrap core CSS -->
-	<link href="<?php echo STYLES_PATH; ?>bootstrap.min.css" rel="stylesheet">
-
-	<!-- Custom fonts for this template -->
-	<script src="https://kit.fontawesome.com/e1df53984c.js"></script>
-	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
 	<!-- Custom styles for this template -->
 	<link href="<?php echo STYLES_PATH; ?>landing-page.css" rel="stylesheet">
