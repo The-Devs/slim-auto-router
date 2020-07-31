@@ -1,21 +1,24 @@
 <?php
 $router = [
-    "equipe" => [
-        [
-            "methods" => [ "GET" ],
-            "url" => "/{username}",
-            "function" => $rt[ "curriculum-vitae" ],
-        ]
-    ],
     [
         "methods" => [ "GET" ],
         "url" => "/",
-        "function" => $rt[ "home" ],
+        "function" => $rt[ "crudRoot" ],
     ],
     [
-        "methods" => [ "POST" ],
-        "url" => "/mail",
-        "function" => $rt[ "mailer" ],
+        "methods" => [ "GET" ],
+        "url" => "/install",
+        "function" => $rt[ "crudInstall" ],
+    ],
+    [
+        "methods" => [ "GET" ],
+        "url" => "/{tableName}",
+        "function" => $rt[ "crudRows" ],
+    ],
+    [
+        "methods" => [ "GET" ],
+        "url" => "/{tableName}/{id}",
+        "function" => $rt[ "crudRows" ],
     ],
 ];
 

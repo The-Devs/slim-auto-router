@@ -1,17 +1,13 @@
 <?php
-
 header( "Access-Control-Allow-Origin: *" );
 header("Access-Control-Allow-Headers: Content-Type" );
 header( "Access-Control-Allow-Methods: GET, POST, PUT, DELETE" );
-
-
 
 // Setting all relatives path and absolute uri
 require_once "../definitions.php";
 
 // Set website domain here
 require VENDOR_URI . "autoload.php";
-session_start();
 
 // Instantiate the app
 $settings = require SOURCE_URI . "settings.php";
