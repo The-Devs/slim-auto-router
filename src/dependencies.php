@@ -2,7 +2,6 @@
 
 use TDClass\DatabaseConnection;
 use TDClass\ErrorHandler;
-use TDClass\ResponseTemplate;
 
 $container = $app->getContainer();                  
 
@@ -18,9 +17,6 @@ $container[ "logger" ] = function ( $c ) {
     return $logger;
 };
 
-$container[ "resTemp" ] = function ( $c ) {
-    return new ResponseTemplate();
-};
 $container[ "database" ] = function ( $c ) {
     $dbInfo = $c->get( 'settings' )[ "database" ];
     return new DatabaseConnection( $dbInfo );

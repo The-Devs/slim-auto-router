@@ -35,7 +35,8 @@ $database = [
 			"unique" => [ "name" ],
 			"fields" => [
 				"id" => "int(11)",
-				"name" => "varchar(100)",
+				"name" => "varchar(35)",
+				"title" => "varchar(35)",
 			],
 		],
 		"reviews" => [
@@ -50,6 +51,18 @@ $database = [
 				"content" => "text",
 				"title" => "varchar(80)",
 				"name" => "varchar(100)",
+			],
+		],
+		"questions" => [
+			"prefix" => "question_",
+			"primary" => "id",
+			"unique" => [ "name" ],
+			"fields" => [
+				"id" => "int(11)",
+				"name" => "varchar(35)",
+				"title" => "varchar(35)",
+				"tagIds" => "varchar(50)",
+				"isMulti" => "tinyint(1)",
 			],
 		],
 	]

@@ -1,6 +1,7 @@
 <?php
 use Slim\Http\Request;
 use Slim\Http\Response;
+use TDClass\ResponseTemplate;
 use SebastianBergmann\GlobalState\Exception;
 
 // /crud/{tableName}[/{id|colName}[/{value}]]
@@ -17,7 +18,6 @@ $rt[ "crudRoot" ] = function ( Request $request, Response $response, array $args
 //      &page=[0-9]+
 $rt[ "crudRows" ] = function ( Request $request, Response $response, array $args ) {
     $db = $this->database;
-    $resTemp = $this->resTemp;
     $tableName = $args[ "tableName" ];
     if ( $db->isTable( $tableName ) ) {
         if ( $request->isGet() ) {
@@ -52,65 +52,68 @@ $rt[ "crudRows" ] = function ( Request $request, Response $response, array $args
                     $data = $db->select( $tableName, $fields, $where );
                     break;
             }
-            // 
-            $resTemp->setMaxDataSize( $db->countTable( $tableName, $where ) );
-            $resTemp->setPagination( $page );
-            $res = $resTemp->build( 0, $data );
+			//
+			$resTemp = new ResponseTemplate( 200 );
+			$resTemp->setLink( "self", "page=$page" );
+            $res = $resTemp->build( $data );
         }
         if ( $request->isPost() ) {
             $body = $request->getParsedBody();
             $dbResponse = $db->insert( $tableName, $body );
             if ( $dbResponse !== false ) {
-                $res = $resTemp->build( 0 );
+				$resTemp = new ResponseTemplate( 200 );
+				$resTemp->setLink( "created", "page=" );
+                $res = $resTemp->build();
             } else {
-                $res = $resTemp->build( 2 );
+				$resTemp = new ResponseTemplate( 500 );
+                $res = $resTemp->build();
             }
         }
     } else {
-        $res = $resTemp->build( 1 );
+		$resTemp = new ResponseTemplate( 404 );
+        $res = $resTemp->build();
     }
     return $response->withJson( $res );
 };
 // /crud/{tableName}/{id} - get, put, delete
 $rt[ "crudRowById" ] = function ( Request $request, Response $response, array $args ) {
     $db = $this->database;
-    $resTemp = $this->resTemp;
     $tableName = $args[ "tableName" ];
     $where = [ "id" => $args[ "id" ] ];
     if ( $db->isTable( $tableName ) ) {
         if ( $request->isGet() ) {
-            $res = $resTemp->build( 0, $db->select( $tableName, [], $where ) );
+			$resTemp = new ResponseTemplate( 200 );
+            $res = $resTemp->build( $db->select( $tableName, [], $where ) );
         }
         if ( $request->isPut() ) {
             $body = $request->getParsedBody();
             $dbResponse = $db->update( $tableName, $body, $where );
             if ( $dbResponse !== false ) {
-                $res = $resTemp->build( 0 );
+				$resTemp = new ResponseTemplate( 200 );
+                $res = $resTemp->build();
             } else {
-                $res = $resTemp->build( 2 );
+				$resTemp = new ResponseTemplate( 500 );
+                $res = $resTemp->build();
             }
         }
         if ( $request->isDelete() ) {
             $dbResponse = $db->delete( $tableName, $where );
             if ( $dbResponse !== false ) {
-                $res = $resTemp->build( 0 );
+				$resTemp = new ResponseTemplate( 200 );
+                $res = $resTemp->build();
             } else {
-                $res = $resTemp->build( 2 );
+				$resTemp = new ResponseTemplate( 500 );
+                $res = $resTemp->build();
             }
         }
     } else {
-        $res = $resTemp->build( 1 );
+		$resTemp = new ResponseTemplate( 404 );
+        $res = $resTemp->build();
     }
     return $response->withJson( $res );
 };
 $rt[ "crudInstall" ] = function ( Request $request, Response $response, array $args ) {
     $db = $this->database;
-    $resTemp = $this->resTemp;
-    if ( $db->isEmpty() ) {
-        $res = $db->createTables() . " tables created.";
-    } else {
-        $res = $resTemp->build( 4 );
-        // 4 = cannot install. There is previous installation
-    }
+	$res = $db->createTables() . " tables created.";
     return $response->withJson( $res );
 };
