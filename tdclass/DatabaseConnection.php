@@ -234,10 +234,11 @@ class DatabaseConnection extends PDO {
      * @* @param string $whereType The string to apply in implode function inside select method
      */
     public function setWhereType ( string $whereType ) {
-        $this->whereType = $whereType;
-        if ( $whereType === "like" ) {
+		$this->whereType = $whereType;
+		if ( $whereType === "like" )
+		{
             $this->setWhereComparative( "LIKE" );
-        }
+		}
     }
     
     /**

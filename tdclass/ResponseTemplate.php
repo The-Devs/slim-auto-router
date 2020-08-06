@@ -13,6 +13,8 @@ class ResponseTemplate {
 		301 => "Redirecionado permanentemente.",
 		403 => "Acesso negado.",
 		404 => "Não encontrado.",
+		412 => "Condição prévia não cumprida.",
+		422 => "Entidade não processável.",
 		500 => "Erro interno do servidor."
 	];
     private $data = null;

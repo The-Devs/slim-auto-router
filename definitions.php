@@ -23,3 +23,10 @@ define( "TEMPLATES_URI", ROOT_URI . "templates" . DS );
 define( "ASSETS_PATH", ROOT_PATH . "assets" . DS );
 define( "ASSETS_URI", ROOT_URI . "assets" . DS );
 
+define( "PRE_EXISTENT_PARAMS", [ "fields", "qType", "perPage", "page" ] );
+define( "DEFAULT_PAGINATION", 10 );
+define( "DEFAULT_PAGE", 1 );
+define( "DEFAULT_QUERY_PARAMS", [
+	"perPage" => DEFAULT_PAGINATION,
+	"page" => DEFAULT_PAGE,
+] );

@@ -12,15 +12,20 @@ $router = [
 			"function" => $rt[ "crudInstall" ],
 		],
 		[
-			"methods" => [ "GET" ],
+			"methods" => [ "GET", "POST" ],
 			"url" => "/{tableName}",
 			"function" => $rt[ "crudRows" ],
 		],
 		[
-			"methods" => [ "GET" ],
+			"methods" => [ "GET", "POST" ],
 			"url" => "/{tableName}/{id}",
-			"function" => $rt[ "crudRows" ],
+			"function" => $rt[ "crudRowId" ],
 		],
+	],
+	[
+		"methods" => [ "GET" ],
+		"url" => "/",
+		"function" => $rt[ "home" ]
 	]
 ];
 

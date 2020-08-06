@@ -4,6 +4,9 @@ use Slim\Http\Response;
 use TDClass\ResponseTemplate;
 use SebastianBergmann\GlobalState\Exception;
 
+$rt[ "home" ] = function ( Request $request, Response $response, array $args ) {
+	return $response->getBody()->write( "Mec" );
+};
 // /crud/{tableName}[/{id|colName}[/{value}]]
 $rt[ "crudRoot" ] = function ( Request $request, Response $response, array $args ) {
     return "Show what endpoints exist and links for navigations in API.";
@@ -11,8 +14,8 @@ $rt[ "crudRoot" ] = function ( Request $request, Response $response, array $args
 
 // /crud/{tableName} - get, post
 // get
-//      ?fieldName=fieldValue
-//      &qType=(like||interval)
+//      ?[fieldName]=fieldValue
+//      &qType=(like|csv|interval)
 //      &fields=fieldName1,fieldName2
 //      &perPage=[0-9]+
 //      &page=[0-9]+
@@ -25,20 +28,18 @@ $rt[ "crudRows" ] = function ( Request $request, Response $response, array $args
             if ( ! empty( $fields ) ) {
                 $fields = explode( ",", $fields );
             }
-            // aqui!!!
             $where = $request->getQueryParams();
-            $perPage = $request->getQueryParam( "perPage" );
-            $page = $request->getQueryParam( "page", 1 );
-            if ( ! empty( $perPage ) ) {
-                $offset = $perPage*( $page - 1);
-                $db->setSelectLimit( $perPage, $offset );
-            }
-            unset(
-                $where[ "fields" ],
-                $where[ "qType" ],
-                $where[ "perPage"],
-                $where[ "page"]
-            );
+            $perPage = $request->getQueryParam( "perPage", DEFAULT_PAGINATION );
+            $page = $request->getQueryParam( "page", DEFAULT_PAGE );
+			$offset = $perPage*( $page - 1 );
+			$db->setSelectLimit( $perPage, $offset );
+			foreach ( PRE_EXISTENT_PARAMS as $preExistentParam )
+			{
+				if ( isset( $where[ $preExistentParam ] ) )
+				{
+					unset( $where[ $preExistentParam ] );
+				}
+			}
             switch ( $request->getQueryParam( "qType" ) ) {
                 case "like":
                     $db->setWhereType( "like" );
@@ -46,8 +47,26 @@ $rt[ "crudRows" ] = function ( Request $request, Response $response, array $args
                     break;
                 case "interval":
                     break;
-                // case "csv":
-                //     break;
+                case "csv":
+					// get csv col from db (no pagination)
+					$unhandledData = $db->select( $tableName );
+					$data = [];
+					// [fieldName]=$csvList
+					foreach ( $where as $colName => $colValue )
+					{
+						$listAsArray = array_map( "intval", explode( ",", $colValue ) );
+						foreach ( $unhandledData as $unhandledRow )
+						{
+							$valuesAsArray = explode( ",", $unhandledRow[ $colName ] );
+							$valuesAsArray = array_map( "intval", $valuesAsArray );
+							$intersection = array_intersect( $listAsArray, $valuesAsArray );
+							if ( $intersection === $listAsArray )
+							{
+								$data[] = $unhandledRow;
+							}
+						}
+					}
+                    break;
                 default:
                     $data = $db->select( $tableName, $fields, $where );
                     break;
