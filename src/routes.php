@@ -11,7 +11,49 @@ $rt[ "home" ] = function ( Request $request, Response $response, array $args ) {
 $rt[ "crudRoot" ] = function ( Request $request, Response $response, array $args ) {
     return "Show what endpoints exist and links for navigations in API.";
 };
-
+$rt[ "questionsRoute" ] = function ( Request $request, Response $response, array $args ) 
+{
+    $db = $this->database;
+    if ( $db->isTable( "questions" ) && $db->isTable( "tags" ) ) {
+		if ( $request->isGet() )
+		{
+			$questionsArray = $db->select( "questions" );
+			$tagsArray = $db->select( "tags" );
+			$questionTags = [];
+			$data = [];
+			foreach ( $questionsArray as $question )
+			{
+				$tagIds = explode( ",", $question[ "tagIds" ] );
+				$questionTags = [];
+				foreach ( $tagsArray as $tag )
+				{
+					if ( in_array( $tag[ "id" ], $tagIds ) )
+					{
+						$questionTags[] = $tag;
+					}
+				}
+				$questionWithTags = $question;
+				unset( $questionWithTags[ "tagIds" ] );
+				$questionWithTags[ "tags" ] = $questionTags;
+				$questionWithTags[ "isMulti" ] = ( $questionWithTags[ "isMulti" ] ) ? true : false;
+				$questionWithTags[ "required" ] = ( $questionWithTags[ "required" ] ) ? true : false;
+				$data[] = $questionWithTags;
+			}
+			$resTemp = new ResponseTemplate( 200 );
+			$resTemp->setLink( "self", "" );
+            $res = $resTemp->build( $data );
+        }
+		else
+        {
+			$resTemp = new ResponseTemplate( 405 );
+			$res = $resTemp->build();
+        }
+    } else {
+		$resTemp = new ResponseTemplate( 404 );
+        $res = $resTemp->build();
+    }
+    return $response->withJson( $res );
+};
 // /crud/{tableName} - get, post
 // get
 //      ?[fieldName]=fieldValue
@@ -19,19 +61,23 @@ $rt[ "crudRoot" ] = function ( Request $request, Response $response, array $args
 //      &fields=fieldName1,fieldName2
 //      &perPage=[0-9]+
 //      &page=[0-9]+
+//      &readFrom=fieldNameInCsvFormat,tableNameSourceOfCsvIdsContent
 $rt[ "crudRows" ] = function ( Request $request, Response $response, array $args ) {
     $db = $this->database;
     $tableName = $args[ "tableName" ];
     if ( $db->isTable( $tableName ) ) {
         if ( $request->isGet() ) {
+			
+            $perPage = $request->getQueryParam( "perPage", DEFAULT_PAGINATION );
+            $page = $request->getQueryParam( "page", DEFAULT_PAGE );
+			$offset = $perPage * ( $page - 1 );
+
             $fields = $request->getParam( "fields", [] );
             if ( ! empty( $fields ) ) {
                 $fields = explode( ",", $fields );
             }
+
             $where = $request->getQueryParams();
-            $perPage = $request->getQueryParam( "perPage", DEFAULT_PAGINATION );
-            $page = $request->getQueryParam( "page", DEFAULT_PAGE );
-			$offset = $perPage*( $page - 1 );
 			$db->setSelectLimit( $perPage, $offset );
 			foreach ( PRE_EXISTENT_PARAMS as $preExistentParam )
 			{

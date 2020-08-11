@@ -10,7 +10,8 @@ $database = [
 	"name" => "mancab",
 	"charset" => "utf8",
 	"user" => "mancab",
-	"password" => "pSikSL(TxBe8T]yd",
+	//"password" => "pSikSL(TxBe8T]yd",
+	"password" => "bD;BzgCzqex&",
 	"prefix" => "mcb_",
 	"tables" => [
 		"products" => [
@@ -57,12 +58,14 @@ $database = [
 			"prefix" => "question_",
 			"primary" => "id",
 			"unique" => [ "name" ],
+			"default" => [ "isMulti" => 0, "required" => 1 ],
 			"fields" => [
 				"id" => "int(11)",
 				"name" => "varchar(35)",
 				"title" => "varchar(35)",
 				"tagIds" => "varchar(50)",
 				"isMulti" => "tinyint(1)",
+				"required" => "tinyint(1)",
 			],
 		],
 	]

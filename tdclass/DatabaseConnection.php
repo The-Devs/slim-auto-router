@@ -1,6 +1,4 @@
 <?php
-
-
 /**
  * FAZER QUERIES (?) fields,order...
  * JOIN
@@ -23,7 +21,8 @@ class DatabaseConnection extends PDO {
     private $selectLimit = null;
     private $selectOffset = null;
 
-    function __construct ( array $dbInfo, array $options = [] ){
+	function __construct ( array $dbInfo, array $options = [] )
+	{
         $dsn = "mysql:host=" . $dbInfo[ "host" ] . ";dbname=" . $dbInfo[ "name" ] . ";charset=" . $dbInfo[ "charset" ];
         $options = [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
@@ -128,13 +127,13 @@ class DatabaseConnection extends PDO {
     private function setWhereComparative ( string $whereComparative ) {
         $this->whereComparative = $whereComparative;
     }
+
     /*
     *
     *        PUBLIC
     *        FUNCTIONS
     *
     */
-
 
     public function getPrefix () {
         return $this->prefix;
